@@ -1,0 +1,54 @@
+{{ 'section-eminem-root.css' | asset_url | stylesheet_tag }}
+{{ 'section-eminem-header.css' | asset_url | stylesheet_tag }}
+{{ 'section-eminem-images.css' | asset_url | stylesheet_tag }}
+
+
+{%- style -%}
+  .section-{{ section.id }}-background-color {
+    background-color: {{ section.settings.background_color}}
+    ;
+  }
+  .section-{{ section.id }}-icon-width {
+    width: {{ section.settings.icon_width}}
+    px;
+  }
+{%- endstyle -%}
+
+<div class="flex-container-header">
+  <div class="flex-section flex-header section-{{ section.id }}-background-color">
+    <img
+      class="logo section-{{ section.id }}-icon-width"
+      src="{{ section.settings.logo | img_url: 'small' }}"
+      alt=""
+      role="img" />
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Header",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Select a header image icon."
+      }, {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#000000"
+      }, {
+        "type": "range",
+        "id": "icon_width",
+        "min": 100,
+        "max": 175,
+        "step": 1,
+        "unit": "px",
+        "label": "Icon size",
+        "default": 125
+      }
+    ]
+  }
+{% endschema %}

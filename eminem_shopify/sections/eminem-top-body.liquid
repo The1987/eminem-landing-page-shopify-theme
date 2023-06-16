@@ -1,0 +1,124 @@
+{{ 'section-eminem-layout.css' | asset_url | stylesheet_tag }}
+{{ 'section-eminem-offer.css' | asset_url | stylesheet_tag }}
+
+{% comment %}{%- for block in section.blocks -%}{%- endfor -%}{% endcomment %}
+
+{%- style -%}
+
+  .message-item.left {
+    background-color: var(--primary-dark-gray);
+    background-image: url("{{ section.settings.offer_image | img_url: 'master' }}");
+    background-position: center;
+    background-size: cover;
+  }
+
+  img.image.show-desktop,
+  img.image.show-mobile {
+    width: 100%;
+  }
+
+  .show-desktop,
+  svg.show-desktop {
+    display: none;
+  }
+  .show-mobile,
+  svg.show-mobile {
+    display: flex;
+  }
+
+  @media screen and (max-width: 465px) {}
+
+  @media screen and (min-width: 650px) {
+    .show-desktop,
+    svg.show-desktop {
+      display: flex;
+    }
+    .show-mobile,
+    svg.show-mobile {
+      display: none;
+    }
+  }
+{%- endstyle -%}
+
+<script src="{{ 'eminem-script.js' | asset_url }}" defer="defer"></script>
+
+<div class="flex-container">
+
+  <div id="message-container-id" class="message-container">
+    <div class="message-item left">
+      <span></span>
+    </div>
+    <div class="message-item right">
+      <h4 class="availability">General Stock</h4>
+      <img
+        id="close-button"
+        class="close"
+        src=""
+        alt="">
+      <h3 class="product-title">Product Title</h3>
+      <p class="short-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut vitae
+        magni laborum quod ratione totam omnis placeat? Suscipit, dolor reiciendis.</p>
+      <button class="shop-now" role="button">Shop Now</button>
+    </div>
+  </div>
+
+  <div class="indicators-container">
+    <div class="indicators-item left">
+      <span id="left-offer-button" class="outter-dot outter-color">
+        <span class="dot inner-color"></span>
+      </span>
+    </div>
+    <div id="right-offer-button" class="indicators-item right">
+      <span class="outter-dot outter-color">
+        <span class="dot inner-color"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="hero-images">
+    {% comment %} Desktop Hero Image {% endcomment %}
+    {% if section.settings.desktop_hero_image != blank %}
+      <img
+        class="image show-desktop"
+        src="{{ section.settings.desktop_hero_image | img_url: 'master'  }}"
+        alt=""
+        role="img">
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'show-desktop' }}
+    {% endif %}
+
+    {% if section.settings.mobile_hero_image != blank %}
+      <img
+        class="image show-mobile"
+        src="{{ section.settings.mobile_hero_image | img_url: 'master'  }}"
+        alt=""
+        role="img">
+  {% else %}
+      {% comment %}{{ 'image' | placeholder_svg_tag: 'show-mobile' }}{% endcomment %}
+    {% endif %}
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Top Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "desktop_hero_image",
+        "label": "Select a hero image for the desktop."
+      }, {
+        "type": "image_picker",
+        "id": "mobile_hero_image",
+        "label": "Select a hero image for the mobile."
+      }, {
+        "type": "image_picker",
+        "id": "offer_image",
+        "label": "Select an image for offer."
+      }
+    ]
+  }
+{% endschema %}

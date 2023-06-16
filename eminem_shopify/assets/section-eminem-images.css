@@ -1,0 +1,22 @@
+/* IMAGES */
+  
+  img.social-icon {
+    width: 20px;
+    filter: invert(24%) sepia(69%) saturate(24%) hue-rotate(5deg) brightness(101%) contrast(90%);
+  }
+  
+  img.social-icon:hover {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(147deg) brightness(102%) contrast(101%);
+  }
+  
+  img.social-icon:hover img {
+    fill: white !important;
+  }
+  
+  img.left {
+    max-width: 500px;
+    max-height: 500px;
+  }
+  
+  /* END IMAGES */
+  

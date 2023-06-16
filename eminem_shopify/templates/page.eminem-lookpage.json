@@ -1,0 +1,86 @@
+{
+  "sections": {
+    "header": {
+      "type": "eminem-header",
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/EminemLogoTransparent.png",
+        "background_color": "#000000",
+        "icon_width": 125
+      }
+    },
+    "top": {
+      "type": "eminem-top-body",
+      "settings": {
+        "desktop_hero_image": "shopify:\/\/shop_images\/LargeGroupCropped.png",
+        "mobile_hero_image": "shopify:\/\/shop_images\/LargeGroupCroppedMobile.png"
+      }
+    },
+    "bottom": {
+      "type": "eminem-bottom-body",
+      "settings": {
+        "cta_image": "shopify:\/\/shop_images\/The_Way_I_am_Croop_-_Liv_1024x1024_553597ea-cb2c-466b-a4b4-69cadf1bfb49.png",
+        "cta_background_image": "shopify:\/\/shop_images\/Seated_Shirt_-_Justin_1024x1024_06d33c4f-ee87-49bc-beb7-bf5135a962e1.png",
+        "cta_headline": "Be the first to know",
+        "cta_description": "Sign up for the official Eminem Store list and receive updates on merch drops, exclusive bundles, and other offerings.",
+        "cta_terms": "By submitting this form I agree to receive news, tour dates, and special offers from Eminem. By submitting this form, you agree to the",
+        "cta_url": "",
+        "cta_url_label": "Universal Music Group Privacy Policy"
+      }
+    },
+    "footer": {
+      "type": "eminem-footer",
+      "blocks": {
+        "8ef4859a-86eb-4b5a-acec-e96ee95759e8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/facebook.svg",
+            "image_url": ""
+          }
+        },
+        "c2d342a2-2a7b-4695-befd-5bd0008f3ac2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/twitter.svg",
+            "image_url": ""
+          }
+        },
+        "611f8ffa-698c-4637-a44a-9e7a9d44dd55": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/instagram.svg",
+            "image_url": ""
+          }
+        },
+        "22b677c1-1f97-40cf-b7b4-1224820a6737": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/spotify.svg",
+            "image_url": ""
+          }
+        },
+        "4b2555c5-9013-4c13-ab1c-8589ce26f7be": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/apple.svg",
+            "image_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "8ef4859a-86eb-4b5a-acec-e96ee95759e8",
+        "c2d342a2-2a7b-4695-befd-5bd0008f3ac2",
+        "611f8ffa-698c-4637-a44a-9e7a9d44dd55",
+        "22b677c1-1f97-40cf-b7b4-1224820a6737",
+        "4b2555c5-9013-4c13-ab1c-8589ce26f7be"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "header",
+    "top",
+    "bottom",
+    "footer"
+  ]
+}

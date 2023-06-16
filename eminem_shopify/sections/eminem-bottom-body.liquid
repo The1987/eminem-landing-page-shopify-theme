@@ -1,0 +1,111 @@
+{%- style -%}
+  .flex-bottom-item.right {
+    background-image: url("{{ section.settings.cta_background_image | img_url: 'master' }}");
+    left: 0;
+    right: 0;
+    z-index: 1;
+    filter: blur(10px);
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+{%- endstyle -%}
+
+<div class="flex-container">
+  <div class="flex-section flex-page">
+
+    <div class="flex-bottom-section">
+      <div class="flex-bottom-item left"></div>
+      <div class="flex-bottom-item right">
+        <span></span>
+      </div>
+    </div>
+
+    <div class="flex-form-section">
+      <div class="background-image">
+        <img
+          class="left"
+          src="{{ section.settings.cta_image | img_url: 'master' }}"
+          alt=""
+          role="img">
+      </div>
+      <div class="content">
+        <div class="content-item top">
+          <h2>{{ section.settings.cta_headline }}</h2>
+          <p>{{ section.settings.cta_description }}</p>
+        </div>
+        <div class="content-item bottom">
+          <form id="form_marketing" action="">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"><br><br>
+            <input
+              type="text"
+              id="zipcode"
+              name="zipcode"
+              placeholder="Zip Code"
+              pattern="[0-9]{5}"><br><br>
+            <p class="form-paragraph">{{ section.settings.cta_terms }}
+              <a
+                href="{{ section.settings.cta_url }}"
+                target="_blank"
+                role="link">{{ section.settings.cta_url_label }}</a>.</p>
+            <input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Bottom Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "cta_image",
+        "label": "Select an image for the cta (left side)."
+      },
+      {
+        "type": "image_picker",
+        "id": "cta_background_image",
+        "label": "Select an image for the cta (right side)."
+      },
+      {
+        "type": "text",
+        "id": "cta_headline",
+        "label": "CTA Headline",
+        "default": "Be the first to know"
+      },
+      {
+        "type": "text",
+        "id": "cta_description",
+        "label": "CTA Description",
+        "default": "Sign up for the official Eminem Store list and receive updates on merch drops, exclusive bundles, and other offerings."
+      }, {
+        "type": "header",
+        "content": "Terms and Conditions"
+      }, {
+        "type": "text",
+        "id": "cta_terms",
+        "label": "CTA Terms and Conditions",
+        "default": "By submitting this form I agree to receive news, tour dates, and special offers from Eminem. By submitting this form, you agree to the "
+      }, {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA Url"
+      }, {
+        "type": "text",
+        "id": "cta_url_label",
+        "label": "CTA Url Text",
+        "default": "Universal Music Group Privacy Policy"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,37 @@
+<div class="flex-section flex-footer">
+  {%- for block in section.blocks -%}
+    <a href="{{ block.settings.image_url }}" target="_blank">
+      <img
+        class="social-icon"
+        src="{{ block.settings.image | img_url: 'master' }}"
+        alt="{{ block.settings.image.alt }}"
+        role="img" />
+    </a>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Social Media Icon",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Select image for social media icon."
+          }, {
+            "type": "url",
+            "id": "image_url",
+            "label": "Add url for social media account."
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
